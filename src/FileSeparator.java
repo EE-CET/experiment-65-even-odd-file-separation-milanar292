@@ -1,14 +1,13 @@
 import java.io.*;
 import java.util.*;
 
-public class EvenOddFile {
+public class FileSeparator {
     public static void main(String[] args) {
         try {
             Scanner sc = new Scanner(new File("numbers.txt"));
             PrintWriter evenWriter = new PrintWriter("even.txt");
             PrintWriter oddWriter = new PrintWriter("odd.txt");
 
-            // Read numbers and separate
             while (sc.hasNextInt()) {
                 int num = sc.nextInt();
                 if (num % 2 == 0)
@@ -21,7 +20,6 @@ public class EvenOddFile {
             evenWriter.close();
             oddWriter.close();
 
-            // Display even file content
             BufferedReader brEven = new BufferedReader(new FileReader("even.txt"));
             String line;
             System.out.print("Even File: ");
@@ -30,7 +28,6 @@ public class EvenOddFile {
             }
             brEven.close();
 
-            // Display odd file content
             BufferedReader brOdd = new BufferedReader(new FileReader("odd.txt"));
             System.out.print("\nOdd File: ");
             while ((line = brOdd.readLine()) != null) {
